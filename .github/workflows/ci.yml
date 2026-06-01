@@ -24,7 +24,7 @@ jobs:
       - name: Run PHPUnit & Quality Metrics
         run: |
           export XDEBUG_MODE=coverage
-          vendor/bin/phpunit tests/ --coverage-text --coverage-filter src/
+          php vendor/bin/phpunit tests/ --coverage-text --coverage-filter src/
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -41,3 +41,4 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           wait-on: 'http://localhost:8000'
+          browser: chrome
